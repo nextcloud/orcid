@@ -6,7 +6,7 @@ style('orcid', 'admin');
 
 <fieldset id="orcidAdminSettings" class="section">
 	<h2>
-		<img src="/apps/user_orcid/img/orcid.png"> ORCID
+		<img src="/apps/orcid/img/orcid.png"> ORCID
 	</h2>
 	<table style="width: 650px;">
 		<tr class="orcid_admin_head">
