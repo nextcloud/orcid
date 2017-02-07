@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<info>
+    <id>orcid</id>
+    <name>ORCID</name>
+    <description>Authenticate with ORCID</description>
+    <licence>AGPL</licence>
+    <author>Lars Næsbye Christensen, DeIC</author>
+    <version>1.1</version>
+    <website>https://github.com/deic-dk/user_orcid</website>
+    <bugs>https://github.com/deic-dk/user_orcid/issues</bugs>
+    <repository type="git">http://github.com/deic-dk/user_orcid.git</repository>
+    <documentation>
+        <user>https://github.com/deic-dk/user_orcid/wiki</user>
+        <admin>https://github.com/deic-dk/user_orcid/wiki</admin>
+    </documentation>
+    <requiremin>7</requiremin>
+    <dependencies>
+        <owncloud min-version="7.0" max-version="9.0"/>
+        <nextcloud min-version="9.0" max-version="12.0"/>
+    </dependencies>
+    <category>authentication</category>
+    <types>
+        <authentication/>
+    </types>
+</info>
+
