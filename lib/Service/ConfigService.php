@@ -43,10 +43,11 @@ class ConfigService
 
     private $miscService;
 
-    public function __construct($appName, IConfig $config, $miscService)
+    public function __construct($appName, IConfig $config, $userId, $miscService)
     {
         $this->appName = $appName;
         $this->config = $config;
+        $this->userId = $userId;
         $this->miscService = $miscService;
     }
 
@@ -94,9 +95,9 @@ class ConfigService
      * @param string $key            
      * @return string
      */
-    public function getUserValue($userId, $key)
+    public function getUserValue($key)
     {
-        return $this->config->getUserValue($userId, $this->appName, $key);
+        return $this->config->getUserValue($this->userId, $this->appName, $key);
     }
 
     /**
@@ -107,9 +108,9 @@ class ConfigService
      * @param string $value            
      * @return string
      */
-    public function setUserValue($userId, $key, $value)
+    public function setUserValue($key, $value)
     {
-        return $this->config->setUserValue($userId, $this->appName, $key, $value);
+        return $this->config->setUserValue($this->userId, $this->appName, $key, $value);
     }
 
     /**

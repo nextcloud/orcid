@@ -54,15 +54,15 @@ class Application extends App
         });
         
         $container->registerService('ConfigService', function ($c) {
-            return new ConfigService($c->query('AppName'), $c->query('CoreConfig'), $c->query('MiscService'));
+            return new ConfigService($c->query('AppName'), $c->query('CoreConfig'), $c->query('UserId'), $c->query('MiscService'));
         });
         
         $container->registerService('SettingsController', function ($c) {
-            return new SettingsController($c->query('AppName'), $c->query('Request'), $c->query('ConfigService'), $c->query('UserId'), $c->query('MiscService'));
+            return new SettingsController($c->query('AppName'), $c->query('Request'), $c->query('ConfigService'), $c->query('MiscService'));
         });
         
         $container->registerService('OrcidController', function ($c) {
-            return new OrcidController($c->query('AppName'), $c->query('Request'), $c->query('ConfigService'), $c->query('UserId'), $c->query('MiscService'));
+            return new OrcidController($c->query('AppName'), $c->query('Request'), $c->query('ConfigService'), $c->query('MiscService'));
         });
         
         /**

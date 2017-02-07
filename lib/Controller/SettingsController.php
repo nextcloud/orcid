@@ -37,15 +37,12 @@ class SettingsController extends Controller
 
     private $configService;
 
-    private $userId;
-
     private $miscService;
 
-    public function __construct($appName, IRequest $request, ConfigService $configService, $userId, $miscService)
+    public function __construct($appName, IRequest $request, ConfigService $configService, $miscService)
     {
         parent::__construct($appName, $request);
         $this->configService = $configService;
-        $this->userId = $userId;
         $this->miscService = $miscService;
     }
     
@@ -91,7 +88,7 @@ class SettingsController extends Controller
     {
         // 'orcid_token' => $this->configService->getUserValue($this->userId, 'orcid_token')
         $params = [
-            'orcid' => $this->configService->getUserValue($this->userId, 'orcid')
+            'orcid' => $this->configService->getUserValue('orcid')
         ];
         
         return new TemplateResponse($this->appName, 'settings.personal', $params, 'blank');
