@@ -28,6 +28,7 @@
 namespace OCA\Orcid\Controller;
 
 use \OCA\Orcid\Service\ConfigService;
+use \OCA\Orcid\Controller\OrcidController;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IRequest;
@@ -99,13 +100,7 @@ class SettingsController extends Controller
      */
     public function getClient()
     {
-        $appUri = \OC::$WEBROOT . '/apps/orcid/OrcidCode.php';
-        if (\OCP\App::isEnabled('files_sharding'))
-            $redirectURL = \OCA\FilesSharding\Lib::getMasterURL() . $appUri;
-        else
-            $redirectURL = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . '://' . $_SERVER['SERVER_NAME'] . $appUri;
-        
-        $redirectURL = "https://dev.kh.ro/apps/orcid/OrcidCode.php";
+        $redirectURL = OrcidController::generateOrcidUrl();
         
         // 'clientSecret' => $this->configService->getAppValue('clientSecret'),
         $params = [
@@ -115,38 +110,24 @@ class SettingsController extends Controller
         
         return $params;
     }
-    
+
     /**
      * @NoAdminRequired
      */
     public function getOrcid()
     {
-
-        $orcid = \OCP\Config::getUserValue(\OC::$server->getUserSession()->getUser()->getUID(),
-            'user_orcid', 'orcid');
-        
-        OCP\JSON::success(array(
-            'orcid' => $orcid
-        ));
-        
+        $params = [
+            'orcid' => $this->configService->getUserValue('orcid')
+        ];
+        return $params;
     }
-    
+
     /**
      * @NoAdminRequired
      */
     public function setOrcid()
     {
-        
-        $orcid = $_POST['orcid'];
-        
-        \OCP\Config::setUserValue(\OC::$server->getUserSession()->getUser()->getUID(),
-            'user_orcid', 'orcid', $orcid);
-        
-        OCP\JSON::success();
-        
-        
+        $this->configService->setUserValue('orcid', $_POST['orcid']);
+        return $this->getOrcid();
     }
-    
-    
-    
 }
