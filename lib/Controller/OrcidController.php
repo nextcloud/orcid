@@ -48,23 +48,18 @@ class OrcidController extends Controller
 
     public static function generateOrcidUrl()
     {
-        $appUri = \OC::$WEBROOT . '/index.php/apps/orcid/OrcidCode.php';
-        if (\OCP\App::isEnabled('files_sharding')) {
-            $redirectURL = \OCA\FilesSharding\Lib::getMasterURL() . $appUri;
-        } else {
-            $redirectURL = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . '://' . $_SERVER['SERVER_NAME'] . $appUri;
-        }
-        
+        $redirectURL = \OC::$server->getURlGenerator()->linkToRouteAbsolute('orcid.orcid.OrcidCode');
         return $redirectURL;
     }
 
     /**
      * @NoCSRFRequired
+     * @NoAdminRequired
      */
     public function OrcidCode()
     {
         $code = $_GET['code'];
-        $this->miscService->log('Received code: ' . $code);
+      //  $this->miscService->log('Received code: ' . $code);
         
         $user = \OCP\User::getUser();
         
