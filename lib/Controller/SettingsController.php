@@ -70,12 +70,12 @@ class SettingsController extends Controller
         return $params;
     }
 
-    public function setOrcidInfo($clientAppID, $clientSecret)
+    public function setOrcidInfo($client_app_id, $client_secret)
     {
-        $this->configService->setAppValue('clientAppID', $clientAppID);
-        $this->configService->setAppValue('clientSecret', $clientSecret);
+        $this->configService->setAppValue('clientAppID', $client_app_id);
+        $this->configService->setAppValue('clientSecret', $client_secret);
         
-        return;
+        return $this->getOrcidInfo();
     }
     
     //

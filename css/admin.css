@@ -23,3 +23,12 @@ TD.orcid_admin_head {
 	padding-right: 30px;
 	font-style: italic;
 }
+
+#orcid_saving {
+	font-weight: bolder;
+	font-size: 12px;
+	margin-left: 30px;
+	font-style: italic;
+	filter: alpha(opacity = 50);
+	opacity: 0.5;
+}

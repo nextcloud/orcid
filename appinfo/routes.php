@@ -30,7 +30,7 @@ return [
         [
             'name' => 'settings#getOrcidInfo',
             'url' => 'ajax/settings/getOrcidInfo.php',
-            'verb' => 'GET'
+            'verb' => 'POST'
         ],
         [
             'name' => 'settings#setOrcidInfo',

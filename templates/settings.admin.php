@@ -10,7 +10,8 @@ style('orcid', 'admin');
 	</h2>
 	<table style="width: 650px;">
 		<tr class="orcid_admin_head">
-			<td class="orcid_admin_head" colspan="2">Client credentials</td>
+			<td><div id="orcid_saving"><?php p($l->t('Saving')); ?></div></td>
+			<td class="orcid_admin_head">ORCID API Credentials</td>
 		</tr>
 
 		<tr>
@@ -18,7 +19,7 @@ style('orcid', 'admin');
 			<td id="redirecturl"></td>
 		</tr>
 		<tr>
-			<td class="orcid_admin_left">Client App ID:</td>
+			<td class="orcid_admin_left">Client ID:</td>
 			<td><input type='text' style="width: 300px" name='inputclientappid'
 				id='inputclientappid' original-title=''
 				title='Set the Client app ID for OAuth'></td>
@@ -31,9 +32,10 @@ style('orcid', 'admin');
 		</tr>
 		<tr>
 			<td></td>
-			<td><input type='submit' value='Store OAuth values'
+			<td><input type='submit' value='Store ORCID Credentials'
 				style="width: 250px" original-title='' style="width: 300px"
-				id='clientsubmit' name='clientsubmit' title='Store OAuth values'></input></td>
+				id='clientsubmit' name='clientsubmit'
+				title='Store ORCID Credentials'></input></td>
 		</tr>
 	</table>
 	<div id='clientstatus' style="font-size: .8em;"></div>
