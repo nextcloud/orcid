@@ -68,9 +68,9 @@ class OrcidController extends Controller
         
         $redirectURL = self::generateOrcidUrl();
         
-        $content = "client_id=" . $clientAppID . "&" . "client_secret=" . $clientSecret . "&" . "grant_type=authorization_code&" . "code=" . $code . "&" . "redirect_uri=" . $redirectURL;
-        $this->miscService->log('$$$$ ' . $content);
         $url = "https://orcid.org/oauth/token";
+        $content = "client_id=" . $clientAppID . "&" . "client_secret=" . $clientSecret . "&" . "grant_type=authorization_code&" . "code=" . $code . "&" . "redirect_uri=" . $redirectURL;
+        
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_HEADER, false);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -85,9 +85,8 @@ class OrcidController extends Controller
         $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
         if ($status === 0 || $status >= 300 || $json_response === null || $json_response === false) {
-            $this->miscService->log('ERROR: bad ws response. ' . $json_response);
+           // $this->miscService->log('ERROR: bad ws response. ' . $json_response);
             return false;
-            // OCP\JSON::error();
         } else {
             $response = json_decode($json_response, true);
         }
@@ -96,9 +95,8 @@ class OrcidController extends Controller
         
         if (! empty($response) && ! empty($response['orcid'])) {
             $this->configService->setUserValue('orcid', $response['orcid']);
-            $this->configService->setUserValue('access_token', $response['access_token']);            
+            $this->configService->setUserValue('access_token', $response['access_token']);
             return new TemplateResponse($this->appName, 'thanks', [], 'blank');
-            
         } else {
             return false;
         }
