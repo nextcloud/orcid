@@ -1,12 +1,12 @@
  <?php
 
 /**
- * Orcid - based on user_orcid from Lars Næsbye Christensen 
+ * Orcid - based on user_orcid from Lars Naesbye Christensen 
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
  *
- * @author Lars Næsbye Christensen, DeIC
+ * @author Lars Naesbye Christensen, DeIC
  * @author Maxence Lange <maxence@pontapreta.net>
  * @copyright 2017
  * @license GNU AGPL version 3 or any later version
