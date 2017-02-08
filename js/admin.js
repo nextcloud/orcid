@@ -5,10 +5,9 @@ $(document).ready(function() {
 		type: "GET",
 		dataType: 'json',
 		success: function(s) {
-			clientAppID = s['clientAppID'];
-			clientSecret = s['clientSecret'];
-			document.getElementById('inputclientappid').value = clientAppID;
-			document.getElementById('inputclientsecret').value = clientSecret;
+			$('#inputclientappid').val(s['clientAppID']);
+			$('#inputclientsecret').val(s['clientSecret']);
+			$('#redirecturl').text(s['redirUrl']);
 		}
 	});
 

@@ -63,7 +63,8 @@ class SettingsController extends Controller
     {
         $params = [
             'clientAppID' => $this->configService->getAppValue('clientAppID'),
-            'clientSecret' => $this->configService->getAppValue('clientSecret')
+            'clientSecret' => $this->configService->getAppValue('clientSecret'),
+            'redirUrl' => OrcidController::generateOrcidUrl()            
         ];
         
         return $params;

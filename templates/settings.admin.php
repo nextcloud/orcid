@@ -12,22 +12,27 @@ style('orcid', 'admin');
 		<tr class="orcid_admin_head">
 			<td class="orcid_admin_head" colspan="2">Client credentials</td>
 		</tr>
+
+		<tr>
+			<td class="orcid_admin_left orcid_moremargin">Redirect URL:</td>
+			<td id="redirecturl"></td>
+		</tr>
 		<tr>
 			<td class="orcid_admin_left">Client App ID:</td>
-			<td><input type='text' style="width: 250px" name='inputclientappid'
+			<td><input type='text' style="width: 300px" name='inputclientappid'
 				id='inputclientappid' original-title=''
 				title='Set the Client app ID for OAuth'></td>
 		</tr>
 		<tr>
 			<td class="orcid_admin_left">Client Secret:</td>
-			<td><input type='text' name='inputclientsecret' style="width: 250px"
+			<td><input type='text' name='inputclientsecret' style="width: 300px"
 				id='inputclientsecret' original-title=''
 				title='Set the Client secret for OAuth'></td>
 		</tr>
 		<tr>
 			<td></td>
 			<td><input type='submit' value='Store OAuth values'
-				style="width: 250px" original-title='' style="width: 250px"
+				style="width: 250px" original-title='' style="width: 300px"
 				id='clientsubmit' name='clientsubmit' title='Store OAuth values'></input></td>
 		</tr>
 	</table>

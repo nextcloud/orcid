@@ -1,5 +1,5 @@
 TD.orcid_admin_left {
-	width: 230px;
+	width: 150px;
 	text-align: right;
 	font-weight: bold;
 	padding-right: 15px;
@@ -9,6 +9,11 @@ TR.orcid_admin_head, TR.orcid_admin_head:hover {
 	margin-top: 12px;
 	width: 600px;
 	background: #ddd;
+}
+
+TD.orcid_moremargin {
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 TD.orcid_admin_head {
