@@ -1,6 +1,6 @@
 <?php
-
 /**
+ *
  * Orcid - based on user_orcid from Lars Naesbye Christensen
  *
  * This file is licensed under the Affero General Public License version 3 or
@@ -25,6 +25,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 namespace OCA\Orcid\Controller;
 
 use \OCA\Orcid\Service\ConfigService;
@@ -33,102 +34,97 @@ use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IRequest;
 
-class SettingsController extends Controller
-{
+class SettingsController extends Controller {
 
-    private $configService;
+	private $configService;
 
-    private $miscService;
+	private $miscService;
 
-    public function __construct($appName, IRequest $request, ConfigService $configService, $miscService)
-    {
-        parent::__construct($appName, $request);
-        $this->configService = $configService;
-        $this->miscService = $miscService;
-    }
-    
-    //
-    // Admin
-    //
-    
-    /**
-     * @NoCSRFRequired
-     */
-    public function admin()
-    {
-        return new TemplateResponse($this->appName, 'settings.admin', [], 'blank');
-    }
+	public function __construct(
+		$appName, IRequest $request, ConfigService $configService, $miscService
+	) {
+		parent::__construct($appName, $request);
+		$this->configService = $configService;
+		$this->miscService = $miscService;
+	}
 
-    public function getOrcidInfo()
-    {
-        $params = [
-            'clientAppID' => $this->configService->getAppValue('clientAppID'),
-            'clientSecret' => $this->configService->getAppValue('clientSecret'),
-            'redirUrl' => OrcidController::generateOrcidUrl()            
-        ];
-        
-        return $params;
-    }
+	//
+	// Admin
+	//
 
-    public function setOrcidInfo($client_app_id, $client_secret)
-    {
-        $this->configService->setAppValue('clientAppID', $client_app_id);
-        $this->configService->setAppValue('clientSecret', $client_secret);
-        
-        return $this->getOrcidInfo();
-    }
-    
-    //
-    // Personal
-    //
-    
-    /**
-     * @NoCSRFRequired
-     * @NoAdminRequired
-     */
-    public function personal()
-    {
-        // 'orcid_token' => $this->configService->getUserValue($this->userId, 'orcid_token')
-        $params = [
-            'orcid' => $this->configService->getUserValue('orcid')
-        ];
-        
-        return new TemplateResponse($this->appName, 'settings.personal', $params, 'blank');
-    }
+	/**
+	 * @NoCSRFRequired
+	 */
+	public function admin() {
+		return new TemplateResponse($this->appName, 'settings.admin', [], 'blank');
+	}
 
-    /**
-     * @NoAdminRequired
-     */
-    public function getClient()
-    {
-        $redirectURL = OrcidController::generateOrcidUrl();
-        
-        // 'clientSecret' => $this->configService->getAppValue('clientSecret'),
-        $params = [
-            'clientAppID' => $this->configService->getAppValue('clientAppID'),
-            'redirectURL' => $redirectURL
-        ];
-        
-        return $params;
-    }
+	public function getOrcidInfo() {
+		$params = [
+			'clientAppID' => $this->configService->getAppValue('clientAppID'),
+			'clientSecret' => $this->configService->getAppValue('clientSecret'),
+			'redirUrl' => OrcidController::generateOrcidUrl()
+		];
 
-    /**
-     * @NoAdminRequired
-     */
-    public function getOrcid()
-    {
-        $params = [
-            'orcid' => $this->configService->getUserValue('orcid')
-        ];
-        return $params;
-    }
+		return $params;
+	}
 
-    /**
-     * @NoAdminRequired
-     */
-    public function setOrcid()
-    {
-        $this->configService->setUserValue('orcid', $_POST['orcid']);
-        return $this->getOrcid();
-    }
+	public function setOrcidInfo($client_app_id, $client_secret) {
+		$this->configService->setAppValue('clientAppID', $client_app_id);
+		$this->configService->setAppValue('clientSecret', $client_secret);
+
+		return $this->getOrcidInfo();
+	}
+
+	//
+	// Personal
+	//
+
+	/**
+	 * @NoCSRFRequired
+	 * @NoAdminRequired
+	 */
+	public function personal() {
+		// 'orcid_token' => $this->configService->getUserValue($this->userId, 'orcid_token')
+		$params = [
+			'orcid' => $this->configService->getUserValue('orcid')
+		];
+
+		return new TemplateResponse($this->appName, 'settings.personal', $params, 'blank');
+	}
+
+	/**
+	 * @NoAdminRequired
+	 */
+	public function getClient() {
+		$redirectURL = OrcidController::generateOrcidUrl();
+
+		// 'clientSecret' => $this->configService->getAppValue('clientSecret'),
+		$params = [
+			'clientAppID' => $this->configService->getAppValue('clientAppID'),
+			'redirectURL' => $redirectURL
+		];
+
+		return $params;
+	}
+
+	/**
+	 * @NoAdminRequired
+	 */
+	public function getOrcid() {
+		$params = [
+			'orcid' => $this->configService->getUserValue('orcid')
+		];
+
+		return $params;
+	}
+
+	/**
+	 * @NoAdminRequired
+	 */
+	public function setOrcid() {
+		$this->configService->setUserValue('orcid', $_POST['orcid']);
+
+		return $this->getOrcid();
+	}
 }

@@ -1,6 +1,6 @@
 <?php
-
 /**
+ *
  * Orcid - based on user_orcid from Lars Naesbye Christensen
  *
  * This file is licensed under the Affero General Public License version 3 or
@@ -25,30 +25,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 namespace OCA\Orcid\Service;
 
 use OCP\ILogger;
 
-class MiscService
-{
+class MiscService {
 
-    private $logger;
+	private $logger;
 
-    private $appName;
+	private $appName;
 
-    public function __construct(ILogger $logger, $appName)
-    {
-        $this->logger = $logger;
-        $this->appName = $appName;
-    }
+	public function __construct(ILogger $logger, $appName) {
+		$this->logger = $logger;
+		$this->appName = $appName;
+	}
 
-    public function log($message, $level = 2)
-    {
-        $data = array(
-            'app' => $this->appName,
-            'level' => $level
-        );
-        
-        $this->logger->log($level, $message, $data);
-    }
+	public function log($message, $level = 2) {
+		$data = array(
+			'app'   => $this->appName,
+			'level' => $level
+		);
+
+		$this->logger->log($level, $message, $data);
+	}
 }

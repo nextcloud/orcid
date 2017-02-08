@@ -1,7 +1,7 @@
- <?php
-
+<?php
 /**
- * Orcid - based on user_orcid from Lars Naesbye Christensen 
+ *
+ * Orcid - based on user_orcid from Lars Naesbye Christensen
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
@@ -25,6 +25,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 $app = new \OCA\Orcid\AppInfo\Application();
 
 // $app->registerNavigation();

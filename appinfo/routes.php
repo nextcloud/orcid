@@ -1,6 +1,6 @@
 <?php
-
 /**
+ *
  * Orcid - based on user_orcid from Lars Naesbye Christensen
  *
  * This file is licensed under the Affero General Public License version 3 or
@@ -25,6 +25,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 return [
     'routes' => [
         [
