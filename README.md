@@ -19,7 +19,7 @@ In the Personal Settings Interface, your users will identify themself using Orci
 
 Seems fine.
 
-### How it works (when we've got it done)
+### How it works
 
  - When the user clicks the 'Confirm ORCID' button, they are taken to orcid.org (in a new window) for authentication.
  - After successful login and authentication, orcid.org service sends data back to owncloud via access token.
