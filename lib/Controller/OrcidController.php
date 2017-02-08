@@ -56,6 +56,15 @@ class OrcidController extends Controller
      * @NoCSRFRequired
      * @NoAdminRequired
      */
+    public function AboutOrcid()
+    {
+        return new TemplateResponse($this->appName, 'about', [], 'blank');
+    }
+
+    /**
+     * @NoCSRFRequired
+     * @NoAdminRequired
+     */
     public function OrcidCode()
     {
         $code = $_GET['code'];
@@ -89,7 +98,7 @@ class OrcidController extends Controller
             $response = json_decode($json_response, true);
         }
         
-       // $this->miscService->log('Got token: ' . serialize($response));
+        // $this->miscService->log('Got token: ' . serialize($response));
         
         if (! empty($response) && ! empty($response['orcid'])) {
             $this->configService->setUserValue('orcid', $response['orcid']);

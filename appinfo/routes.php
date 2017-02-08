@@ -56,6 +56,11 @@ return [
             'name' => 'orcid#OrcidCode',
             'url' => 'OrcidCode.php',
             'verb' => 'GET'
+        ],
+        [
+            'name' => 'orcid#AboutOrcid',
+            'url' => 'AboutOrcid.php',
+            'verb' => 'GET'
         ]
     ]
 ];

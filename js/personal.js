@@ -106,28 +106,19 @@ $(document)
 										$('.ui-helper-clearfix').css("display",
 												"none");
 
-										$
-												.ajax(
-														OC
-																.linkTo(
-																		'orcid',
-																		'ajax/about_orcid.php'),
-														{
-															type : 'GET',
-															success : function(
-																	jsondata) {
-																if (jsondata) {
-																	$(
-																			'.about-orcid')
-																			.html(
-																					jsondata.data.page);
-																}
-															},
-															error : function(
-																	data) {
-																alert("Unexpected error!");
-															}
-														});
+										$.ajax(OC.linkTo('orcid',
+												'AboutOrcid.php'), {
+											type : 'GET',
+											success : function(jsondata) {
+												if (jsondata) {
+													$('.about-orcid').html(
+															jsondata);
+												}
+											},
+											error : function(data) {
+												alert("Unexpected error!");
+											}
+										});
 									});
 
 					$(document)
