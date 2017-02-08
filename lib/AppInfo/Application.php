@@ -33,7 +33,6 @@ use \OCA\Orcid\Controller\OrcidController;
 use \OCA\Orcid\Service\ConfigService;
 use \OCA\Orcid\Service\MiscService;
 use OCP\AppFramework\App;
-use OCP\Util;
 
 class Application extends App {
 
