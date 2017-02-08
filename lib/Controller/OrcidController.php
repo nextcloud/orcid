@@ -59,9 +59,7 @@ class OrcidController extends Controller
     public function OrcidCode()
     {
         $code = $_GET['code'];
-      //  $this->miscService->log('Received code: ' . $code);
-        
-        $user = \OCP\User::getUser();
+        // $this->miscService->log('Received code: ' . $code);
         
         $clientAppID = trim($this->configService->getAppValue('clientAppID'));
         $clientSecret = trim($this->configService->getAppValue('clientSecret'));
@@ -85,13 +83,13 @@ class OrcidController extends Controller
         $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
         if ($status === 0 || $status >= 300 || $json_response === null || $json_response === false) {
-           // $this->miscService->log('ERROR: bad ws response. ' . $json_response);
+            // $this->miscService->log('ERROR: bad ws response. ' . $json_response);
             return false;
         } else {
             $response = json_decode($json_response, true);
         }
         
-        $this->miscService->log('Got token: ' . serialize($response));
+       // $this->miscService->log('Got token: ' . serialize($response));
         
         if (! empty($response) && ! empty($response['orcid'])) {
             $this->configService->setUserValue('orcid', $response['orcid']);
