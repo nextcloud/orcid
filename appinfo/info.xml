@@ -8,7 +8,7 @@
     <version>1.1</version>
     <website>https://github.com/deic-dk/user_orcid</website>
     <bugs>https://github.com/deic-dk/user_orcid/issues</bugs>
-    <repository type="git">http://github.com/deic-dk/user_orcid.git</repository>
+    <repository type="git">https://github.com/deic-dk/user_orcid.git</repository>
     <documentation>
         <user>https://github.com/deic-dk/user_orcid/wiki</user>
         <admin>https://github.com/deic-dk/user_orcid/wiki</admin>

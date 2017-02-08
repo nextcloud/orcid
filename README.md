@@ -2,7 +2,7 @@
 
 Originaly written by Lars Naesbye Christensen, DeIC for ownCloud - https://github.com/deic-dk/user_orcid
 
-This app will use the API from http://orcid.org/ to access and archive users' ORCID information.
+This app will use the API from https://orcid.org/ to access and archive users' ORCID information.
  
 ## Dependencies 
  * nextcloud 10 (tested on nc12)

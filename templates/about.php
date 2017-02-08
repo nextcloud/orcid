@@ -1,7 +1,7 @@
 <div class='orcid-popup'>
 	<p>
 		ORCID provides you with digital identifier that uniquely identifies you as a researcher.
-		Learn more at <a href="http://orcid.org">orcid.org</a>.
+		Learn more at <a href="https://orcid.org">orcid.org</a>.
 	</p>
 	<br />
 	<p>
