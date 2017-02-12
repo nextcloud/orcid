@@ -2,7 +2,7 @@
 	background-image: url('../img/orcid.png');
 }
 
-#connect-orcid-button {
+#orcid_request_button {
 	border: 1px solid #D3D3D3;
 	padding: .3em;
 	background-color: #fff;
@@ -16,7 +16,7 @@
 	vertical-align: middle;
 }
 
-#connect-orcid-button:hover {
+#orcid_request_button:hover {
 	border: 1px solid #338caf;
 	color: #338caf;
 }
@@ -26,10 +26,6 @@
 	margin: 0 .5em 0 0;
 	padding: 0;
 	float: left;
-}
-
-#orcid-info {
-	cursor: pointer;
 }
 
 .about-orcid {

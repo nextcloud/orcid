@@ -1,14 +1,14 @@
 <?php
 /**
  *
- * Orcid - based on user_orcid from Lars Naesbye Christensen
+ * Orcid - Authenticate with Orcid.org
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
  *
- * @author Lars Naesbye Christensen, DeIC
  * @author Maxence Lange <maxence@pontapreta.net>
- * @copyright 2017
+ * @author Lars Naesbye Christensen, DeIC
+ * @copyright 2016-2017
  * @license GNU AGPL version 3 or any later version
  *
  * This program is free software: you can redistribute it and/or modify
@@ -27,43 +27,28 @@
  */
 
 return [
-    'routes' => [
-        [
-            'name' => 'settings#getOrcidInfo',
-            'url' => 'ajax/settings/getOrcidInfo.php',
-            'verb' => 'POST'
-        ],
-        [
-            'name' => 'settings#setOrcidInfo',
-            'url' => 'ajax/settings/setOrcidInfo.php',
-            'verb' => 'POST'
-        ],
-        [
-            'name' => 'settings#getClient',
-            'url' => 'ajax/settings/getClient.php',
-            'verb' => 'GET'
-        ],
-        [
-            'name' => 'settings#setOrcid',
-            'url' => 'ajax/settings/setOrcid.php',
-            'verb' => 'GET'
-        ],
-        [
-            'name' => 'settings#getOrcid',
-            'url' => 'ajax/settings/getOrcid.php',
-            'verb' => 'GET'
-        ],
-        [
-            'name' => 'orcid#OrcidCode',
-            'url' => 'OrcidCode.php',
-            'verb' => 'GET'
-        ],
-        [
-            'name' => 'orcid#AboutOrcid',
-            'url' => 'AboutOrcid.php',
-            'verb' => 'GET'
-        ]
-    ]
+	'routes' => [
+		[
+			'name' => 'settings#getOrcidConfig',
+			'url'  => 'ajax/settings/getOrcidConfig.php',
+			'verb' => 'POST'
+		],
+		[
+			'name' => 'settings#setOrcidConfig',
+			'url'  => 'ajax/settings/setOrcidConfig.php',
+			'verb' => 'POST'
+		],
+		[
+			'name' => 'settings#getUserOrcid',
+			'url'  => 'ajax/settings/getUserOrcid.php',
+			'verb' => 'POST'
+		],
+		[
+			'name' => 'settings#OrcidCode',
+			'url'  => 'OrcidCode.php',
+			'verb' => 'GET'
+		],
+	]
 ];
 
 

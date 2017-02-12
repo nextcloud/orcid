@@ -1,14 +1,14 @@
 <?php
 /**
  *
- * Orcid - based on user_orcid from Lars Naesbye Christensen
+ * Orcid - Authenticate with Orcid.org
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
  *
- * @author Lars Naesbye Christensen, DeIC
  * @author Maxence Lange <maxence@pontapreta.net>
- * @copyright 2017
+ * @author Lars Naesbye Christensen, DeIC
+ * @copyright 2016-2017
  * @license GNU AGPL version 3 or any later version
  *
  * This program is free software: you can redistribute it and/or modify
@@ -29,7 +29,6 @@
 namespace OCA\Orcid\AppInfo;
 
 use \OCA\Orcid\Controller\SettingsController;
-use \OCA\Orcid\Controller\OrcidController;
 use \OCA\Orcid\Service\ConfigService;
 use \OCA\Orcid\Service\MiscService;
 use OCP\AppFramework\App;
@@ -65,15 +64,6 @@ class Application extends App {
 		$container->registerService(
 			'SettingsController', function ($c) {
 			return new SettingsController(
-				$c->query('AppName'), $c->query('Request'), $c->query('ConfigService'),
-				$c->query('MiscService')
-			);
-		}
-		);
-
-		$container->registerService(
-			'OrcidController', function ($c) {
-			return new OrcidController(
 				$c->query('AppName'), $c->query('Request'), $c->query('ConfigService'),
 				$c->query('MiscService')
 			);

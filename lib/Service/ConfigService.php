@@ -33,6 +33,13 @@ use OCP\IConfig;
 
 class ConfigService {
 
+	const ORCID_CLIENT_APPID = 'orcidAppID';
+
+	const ORCID_CLIENT_SECRET = 'orcidSecret';
+
+	const ORCID_USER_ORCID = 'user_orcid';
+	const ORCID_USER_TOKEN = 'user_token';
+
 	private $defaults = [
 		'configured' => '0'
 	];

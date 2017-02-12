@@ -1,26 +1,25 @@
 <?xml version="1.0"?>
-<info>
-    <id>orcid</id>
-    <name>ORCID</name>
-    <description>Authenticate with ORCID</description>
-    <licence>AGPL</licence>
-    <author>Lars Næsbye Christensen, DeIC</author>
-    <version>1.1</version>
-    <website>https://github.com/deic-dk/user_orcid</website>
-    <bugs>https://github.com/deic-dk/user_orcid/issues</bugs>
-    <repository type="git">https://github.com/deic-dk/user_orcid.git</repository>
-    <documentation>
-        <user>https://github.com/deic-dk/user_orcid/wiki</user>
-        <admin>https://github.com/deic-dk/user_orcid/wiki</admin>
-    </documentation>
-    <requiremin>7</requiremin>
-    <dependencies>
-        <owncloud min-version="7.0" max-version="9.0"/>
-        <nextcloud min-version="9.0" max-version="12.0"/>
-    </dependencies>
-    <category>authentication</category>
-    <types>
-        <authentication/>
-    </types>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+	<id>orcid</id>
+	<name>ORCID</name>
+	<summary>Authenticate with ORCID</summary>
+	<description>based on user_orcid written by Lars Næsbye Christensen, DeIC</description>
+	<version>0.9.0</version>
+	<licence>agpl</licence>
+	<author>Maxence Lange</author>
+	<author>Lars Næsbye Christensen</author>
+	<documentation>
+		<admin>https://github.com/nextcloud-gmbh/orcid/wiki</admin>
+	</documentation>
+	<category>tools</category>
+	<category>files</category>
+	<website>https://github.com/nextcloud-gmbh/orcid</website>
+	<bugs>https://github.com/nextcloud-gmbh/orcid/issues</bugs>
+	<repository type="git">https://github.com/nextcloud-gmbh/orcid.git</repository>
+	<dependencies>
+		<owncloud min-version="9.0" max-version="9.2"/>
+		<nextcloud min-version="9" max-version="12"/>
+	</dependencies>
 </info>
 

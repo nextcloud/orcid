@@ -1,137 +1,85 @@
-var oauthWindow;
-var clientAppID;
-var clientSecret;
-var redirectUrl;
+/*
+ *
+ * Orcid - Authenticate with Orcid.org
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Maxence Lange <maxence@pontapreta.net>
+ * @author Lars Naesbye Christensen, DeIC
+ * @copyright 2016-2017
+ * @license GNU AGPL version 3 or any later version
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
 
-function getClient () {
-	$.ajax(OC.linkTo('orcid', 'ajax/settings/getClient.php'), {
-		type: "GET",
-		dataType: 'json',
-		success: function (s) {
-			clientAppID = s['clientAppID'];
-			clientSecret = s['clientSecret'];
-			redirectUrl = s['redirectURL'];
-		}
-	});
-}
+$(document).ready(
+	function () {
 
-function openORCID () {
-	var oauthWindow = window
-		.open("https://orcid.org/oauth/authorize?" + "client_id="
-			+ clientAppID + "&response_type=code&scope=/authenticate&"
-			+ "redirect_uri=" + redirectUrl, "_blank",
-			"toolbar=no, scrollbars=yes, width=620, height=600, top=500, left=500");
-}
+		var orcidUsers = {
 
-function getOrcid () {
-	$.ajax(OC.linkTo('orcid', 'ajax/settings/getOrcid.php'), {
-		type: "GET",
-		dataType: 'json',
-		success: function (s) {
-			orcid = s['orcid'];
-			if (orcid) {
+			requestUserOrcidUrl: '',
+			orcidOauthPopup: null,
 
+			init: function () {
+				var self = this;
+				orcidUsers.getOrcid();
+			},
+
+			getOrcid: function () {
+				$.post(OC.filePath('orcid', 'ajax/settings',
+					'getUserOrcid.php'), {}, orcidUsers.display);
+			},
+
+			display: function (response) {
+				if (response == null)
+					return;
+
+				if (response.user_orcid != '') {
+					$('#orcid_id').text(response.user_orcid);
+					$('#orcid_user_content').fadeIn(400);
+				} else
+					$('#orcid_user_content').fadeOut(400);
+
+				if (response.request_user_orcid_url != '') {
+					self.requestUserOrcidUrl = response.request_user_orcid_url;
+					$('#orcid_request_button').fadeIn(400);
+					$('#orcid_request_button').prop('disabled', false);
+				}
+			},
+
+
+		};
+
+		$('#orcid_user_content').hide();
+		$('#orcid_request_button').fadeTo('0.1');
+		$('#orcid_request_button').prop('disabled', true);
+
+		$('#orcid_request_button').on('click', function () {
+			if (self.orcidOauthPopup && !self.orcidOauthPopup.closed)
+				self.orcidOauthPopup.focus();
+			else {
+				self.orcidOauthPopup =
+					window.open(self.requestUserOrcidUrl, '_blank',
+						'scrollbars=yes,height=620,width=600,top=100,left=300');
+				$(self.orcidOauthPopup).unload(function () {
+					orcidUsers.getOrcid();
+				});
 			}
-		}
-	});
-}
-
-function setOrcid (orcid) {
-	$.ajax(OC.linkTo('orcid', 'ajax/settings/setOrcid.php'), {
-		type: "POST",
-		data: {
-			orcid: orcid
-		},
-		dataType: 'json',
-		success: function (s) {
-
-		}
-	});
-}
-
-$(document)
-	.ready(
-		function () {
-			getClient();
-
-			if ($('a.orcid').text() == "https://orcid.org/") {
-				$('a.orcid').hide();
-			}
-
-			$('#connect-orcid-button').click(function (ev) {
-				openORCID();
-			});
-
-			$("#orcid-info")
-				.click(
-					function (ev) {
-
-						var html = "<div><h2>About ORCID <img class='orcid_img' src='"
-							+ OC.webroot
-							+ "/apps/orcid/img/orcid.png'></h2>\
-				<a class='oc-dialog-close close svg'></a>\
-				<div class='about-orcid'></div></div>";
-
-						$(html).dialog({
-							dialogClass: "oc-dialog-orcid",
-							resizeable: true,
-							draggable: true,
-							modal: false,
-							height: 320,
-							width: 420,
-							buttons: [{
-								"id": "orcidinfo",
-								"text": "OK",
-								"click": function () {
-									$(this).dialog("close");
-								}
-							}
-							]
-						});
-
-						$('body')
-							.append(
-								'<div class="modalOverlay"></div>');
-
-						$('.oc-dialog-close')
-							.live(
-								'click',
-								function () {
-									$(
-										".oc-dialog-orcid")
-										.remove();
-									$('.modalOverlay')
-										.remove();
-								});
-
-						$('.ui-helper-clearfix').css("display",
-							"none");
-
-						$.ajax(OC.linkTo('orcid',
-							'AboutOrcid.php'), {
-							type: 'GET',
-							success: function (jsondata) {
-								if (jsondata) {
-									$('.about-orcid').html(
-										jsondata);
-								}
-							},
-							error: function (data) {
-								alert("Unexpected error!");
-							}
-						});
-					});
-
-			$(document)
-				.click(
-					function (e) {
-						if (!$(e.target).parents().filter(
-								'.oc-dialog-orcid').length
-							&& !$(e.target).filter(
-								'#orcid-info').length) {
-							$(".oc-dialog-orcid").remove();
-							$('.modalOverlay').remove();
-						}
-					});
-
 		});
+
+		orcidUsers.init();
+	});
+
