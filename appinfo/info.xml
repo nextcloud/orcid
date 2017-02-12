@@ -12,8 +12,7 @@
 	<documentation>
 		<admin>https://github.com/nextcloud-gmbh/orcid/wiki</admin>
 	</documentation>
-	<category>tools</category>
-	<category>files</category>
+	<category>auth</category>
 	<website>https://github.com/nextcloud-gmbh/orcid</website>
 	<bugs>https://github.com/nextcloud-gmbh/orcid/issues</bugs>
 	<repository type="git">https://github.com/nextcloud-gmbh/orcid.git</repository>
