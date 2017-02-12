@@ -29,7 +29,6 @@
 namespace OCA\Orcid\AppInfo;
 
 use \OCA\Orcid\Controller\SettingsController;
-use \OCA\Orcid\Controller\OrcidController;
 use \OCA\Orcid\Service\ConfigService;
 use \OCA\Orcid\Service\MiscService;
 use OCP\AppFramework\App;
@@ -65,15 +64,6 @@ class Application extends App {
 		$container->registerService(
 			'SettingsController', function ($c) {
 			return new SettingsController(
-				$c->query('AppName'), $c->query('Request'), $c->query('ConfigService'),
-				$c->query('MiscService')
-			);
-		}
-		);
-
-		$container->registerService(
-			'OrcidController', function ($c) {
-			return new OrcidController(
 				$c->query('AppName'), $c->query('Request'), $c->query('ConfigService'),
 				$c->query('MiscService')
 			);

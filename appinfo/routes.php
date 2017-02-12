@@ -27,43 +27,38 @@
  */
 
 return [
-    'routes' => [
-        [
-            'name' => 'settings#getOrcidInfo',
-            'url' => 'ajax/settings/getOrcidInfo.php',
-            'verb' => 'POST'
-        ],
-        [
-            'name' => 'settings#setOrcidInfo',
-            'url' => 'ajax/settings/setOrcidInfo.php',
-            'verb' => 'POST'
-        ],
-        [
-            'name' => 'settings#getClient',
-            'url' => 'ajax/settings/getClient.php',
-            'verb' => 'GET'
-        ],
-        [
-            'name' => 'settings#setOrcid',
-            'url' => 'ajax/settings/setOrcid.php',
-            'verb' => 'GET'
-        ],
-        [
-            'name' => 'settings#getOrcid',
-            'url' => 'ajax/settings/getOrcid.php',
-            'verb' => 'GET'
-        ],
-        [
-            'name' => 'orcid#OrcidCode',
-            'url' => 'OrcidCode.php',
-            'verb' => 'GET'
-        ],
-        [
-            'name' => 'orcid#AboutOrcid',
-            'url' => 'AboutOrcid.php',
-            'verb' => 'GET'
-        ]
-    ]
+	'routes' => [
+		[
+			'name' => 'settings#getOrcidConfig',
+			'url'  => 'ajax/settings/getOrcidConfig.php',
+			'verb' => 'POST'
+		],
+		[
+			'name' => 'settings#setOrcidConfig',
+			'url'  => 'ajax/settings/setOrcidConfig.php',
+			'verb' => 'POST'
+		],
+		[
+			'name' => 'settings#setUserOrcid',
+			'url'  => 'ajax/settings/setUserOrcid.php',
+			'verb' => 'POST'
+		],
+		[
+			'name' => 'settings#getUserOrcid',
+			'url'  => 'ajax/settings/getUserOrcid.php',
+			'verb' => 'POST'
+		],
+		//		[
+		//			'name' => 'settings#requestUserOrcid',
+		//			'url'  => 'ajax/settings/getUserOrcid.php',
+		//			'verb' => 'POST'
+		//		],
+		[
+			'name' => 'settings#OrcidCode',
+			'url'  => 'OrcidCode.php',
+			'verb' => 'GET'
+		],
+	]
 ];
 
 

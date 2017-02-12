@@ -28,26 +28,26 @@
 $(document).ready(
 	function () {
 
-		var orcidSettings = {
+		var orcidAdmin = {
 
 			init: function () {
-				orcidSettings.getInfo();
+				orcidAdmin.getInfo();
 			},
 
 			getInfo: function () {
 				$.post(OC.filePath('orcid', 'ajax/settings',
-					'getOrcidInfo.php'), {}, orcidSettings.display);
+					'getOrcidConfig.php'), {}, orcidAdmin.display);
 			},
 
 			submit: function () {
-				orcidSettings.saving(true);
+				orcidAdmin.saving(true);
 				var data = {
-					client_app_id: $('#inputclientappid').val(),
-					client_secret: $('#inputclientsecret').val()
+					client_app_id: $('#orcid_client_appid').val(),
+					client_secret: $('#orcid_client_secret').val()
 				};
 
 				$.post(OC.filePath('orcid', 'ajax/settings',
-					'setOrcidInfo.php'), data, orcidSettings.display);
+					'setOrcidConfig.php'), data, orcidAdmin.display);
 			},
 
 			saving: function (load) {
@@ -60,16 +60,17 @@ $(document).ready(
 			display: function (response) {
 				if (response == null)
 					return;
-				orcidSettings.saving(false);
-				$('#inputclientappid').val(response.clientAppID);
-				$('#inputclientsecret').val(response.clientSecret);
+				orcidAdmin.saving(false);
+
+				$('#orcid_client_appid').val(response.orcidAppID);
+				$('#orcid_client_secret').val(response.orcidSecret);
 				$('#redirecturl').text(response.redirUrl);
 			}
 		};
 
 		$('#clientsubmit').mousedown(function () {
-			orcidSettings.submit();
+			orcidAdmin.submit();
 		});
 
-		orcidSettings.init();
+		orcidAdmin.init();
 	});

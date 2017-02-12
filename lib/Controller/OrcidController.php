@@ -67,16 +67,20 @@ class OrcidController extends Controller {
 	 * @NoAdminRequired
 	 */
 	public function OrcidCode() {
-		$code = $_GET['code'];
-		// $this->miscService->log('Received code: ' . $code);
 
-		$clientAppID = trim($this->configService->getAppValue('clientAppID'));
-		$clientSecret = trim($this->configService->getAppValue('clientSecret'));
+		if (!key_exists('code', $_GET)) {
+			return false;
+		}
+
+		$code = $_GET['code'];
+
+		$orcidAppID = trim($this->configService->getAppValue(ConfigService::ORCID_CLIENT_APPID));
+		$orcidSecret = trim($this->configService->getAppValue(ConfigService::ORCID_CLIENT_SECRET));
 
 		$redirectURL = self::generateOrcidUrl();
 
 		$url = "https://orcid.org/oauth/token";
-		$content = "client_id=" . $clientAppID . "&" . "client_secret=" . $clientSecret . "&"
+		$content = "client_id=" . $orcidAppID . "&" . "client_secret=" . $orcidSecret . "&"
 				   . "grant_type=authorization_code&" . "code=" . $code . "&" . "redirect_uri="
 				   . $redirectURL;
 

@@ -22,14 +22,14 @@ style('orcid', 'admin');
 		</tr>
 		<tr>
 			<td class="orcid_admin_left">Client ID:</td>
-			<td><input type='text' style="width: 300px" name='inputclientappid'
-					   id='inputclientappid' original-title=''
+			<td><input type='text' style="width: 300px" name='orcid_client_appid'
+					   id='orcid_client_appid' original-title=''
 					   title='Set the Client app ID for OAuth'></td>
 		</tr>
 		<tr>
 			<td class="orcid_admin_left">Client Secret:</td>
-			<td><input type='text' name='inputclientsecret' style="width: 300px"
-					   id='inputclientsecret' original-title=''
+			<td><input type='text' name='orcid_client_secret' style="width: 300px"
+					   id='orcid_client_secret' original-title=''
 					   title='Set the Client secret for OAuth'></td>
 		</tr>
 		<tr>
