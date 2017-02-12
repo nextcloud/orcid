@@ -1,13 +1,13 @@
 /*
  *
- * Orcid - based on user_orcid from Lars Naesbye Christensen
+ * Orcid - Authenticate with Orcid.org
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
  *
- * @author Lars Naesbye Christensen, DeIC
  * @author Maxence Lange <maxence@pontapreta.net>
- * @copyright 2017
+ * @author Lars Naesbye Christensen, DeIC
+ * @copyright 2016-2017
  * @license GNU AGPL version 3 or any later version
  *
  * This program is free software: you can redistribute it and/or modify
