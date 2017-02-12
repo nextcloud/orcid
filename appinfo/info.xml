@@ -16,6 +16,7 @@
 	<website>https://github.com/nextcloud-gmbh/orcid</website>
 	<bugs>https://github.com/nextcloud-gmbh/orcid/issues</bugs>
 	<repository type="git">https://github.com/nextcloud-gmbh/orcid.git</repository>
+	<screenshot>https://raw.githubusercontent.com/nextcloud-gmbh/orcid/master/screenshots/personalsettings.jpeg</screenshot>
 	<dependencies>
 		<owncloud min-version="9.0" max-version="9.2"/>
 		<nextcloud min-version="9" max-version="12"/>
