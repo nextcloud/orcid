@@ -34,7 +34,6 @@ use OCP\IConfig;
 class ConfigService {
 
 	const ORCID_CLIENT_APPID = 'orcidAppID';
-
 	const ORCID_CLIENT_SECRET = 'orcidSecret';
 
 	const ORCID_USER_ORCID = 'user_orcid';
@@ -120,6 +119,21 @@ class ConfigService {
 	public function setUserValue($key, $value) {
 		return $this->config->setUserValue($this->userId, $this->appName, $key, $value);
 	}
+
+
+	/**
+	 * Get a user value by key and user
+	 *
+	 * @param string $userId
+	 * @param string $key
+	 *
+	 * @return string
+	 */
+	public function getValueForUser($userId, $key) {
+		$this->miscService->log("#### " . $userId . "  " . $key);
+		return $this->config->getUserValue($userId, $this->appName, $key);
+	}
+
 
 	/**
 	 * return the cloud version.
