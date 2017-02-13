@@ -36,7 +36,7 @@ class StaticService {
 
 		return $app->getContainer();
 	}
-	
+
 	public static function getUserOrcid($username) {
 		$c = self::getContainer();
 

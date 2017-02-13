@@ -5,7 +5,7 @@
 	<name>ORCID</name>
 	<summary>Authenticate with ORCID</summary>
 	<description>based on user_orcid written by Lars Næsbye Christensen, DeIC</description>
-	<version>0.9.0</version>
+	<version>0.9.1</version>
 	<licence>agpl</licence>
 	<author>Maxence Lange</author>
 	<author>Lars Næsbye Christensen</author>
