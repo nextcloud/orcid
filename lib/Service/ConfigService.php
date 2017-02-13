@@ -130,7 +130,6 @@ class ConfigService {
 	 * @return string
 	 */
 	public function getValueForUser($userId, $key) {
-		$this->miscService->log("#### " . $userId . "  " . $key);
 		return $this->config->getUserValue($userId, $this->appName, $key);
 	}
 
