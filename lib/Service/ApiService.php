@@ -29,7 +29,7 @@
 namespace OCA\Orcid\Service;
 
 
-class StaticService {
+class ApiService {
 
 	static protected function getContainer() {
 		$app = new \OCA\Orcid\AppInfo\Application();

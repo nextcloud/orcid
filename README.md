@@ -24,3 +24,8 @@ In the Personal Settings Interface, your users will identify themself using Orci
  - The user's ORCID is then stored in the nextcloud database for access by other apps, and displayed next to the button.
 
 
+## Api
+
+Requesting ORCID from another app:
+
+>     $orcid = \OCA\Orcid\Service\ApiService::getUserOrcid($username);
