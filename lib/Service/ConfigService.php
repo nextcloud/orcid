@@ -40,7 +40,10 @@ class ConfigService {
 	const ORCID_USER_TOKEN = 'user_token';
 
 	private $defaults = [
-		'configured' => '0'
+		'configured' => '0',
+		self::ORCID_CLIENT_APPID => '',
+		self::ORCID_CLIENT_SECRET => ''
+
 	];
 
 	private $appName;

@@ -106,7 +106,9 @@ class SettingsController extends Controller {
 	 */
 	public function getUserOrcid() {
 		$params = [
-			'orcid_up' => (($this->configService->getAppValue(ConfigService::ORCID_CLIENT_APPID) !== '') ? '1' : ''),
+			'orcid_up'               => (($this->configService->getAppValue(
+					ConfigService::ORCID_CLIENT_APPID
+				) !== '') ? '1' : ''),
 			'request_user_orcid_url' => $this->generateOrcidRequestUrl(),
 			'user_orcid'             => $this->configService->getUserValue(
 				ConfigService::ORCID_USER_ORCID
