@@ -1,3 +1,5 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nextcloud/orcid/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/nextcloud/orcid/?branch=master)
+
 Based on user_orcid from Lars Naesbye Christensen, DeIC for ownCloud - https://github.com/deic-dk/user_orcid
 
 # Authenticate with ORCID
