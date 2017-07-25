@@ -10,7 +10,7 @@ This app will use the API from https://orcid.org/ to access and archive users'
 ORCID information.
  
 ## Dependencies 
- * nextcloud 10 (tested on nc12)
+ * nextcloud 10 (tested on Nextcloud up to NC13)
 
 ## Installation instructions
 Copy the app files to the **nextcloud/apps/** directory.
