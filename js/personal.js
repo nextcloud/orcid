@@ -44,15 +44,15 @@ $(document).ready(
 			},
 
 			display: function (response) {
-				if (response == null)
+				if (response === null)
 					return;
 
-				if (response.user_orcid != '') {
+				if (response.user_orcid !== '') {
 					$('#orcid_id').text(response.user_orcid);
 					$('#orcid_user_content').fadeIn(400);
 				} else
 					$('#orcid_user_content').fadeOut(400);
-				if (response.orcid_up == '1') {
+				if (response.orcid_up === '1') {
 					self.requestUserOrcidUrl = response.request_user_orcid_url;
 					$('#orcid_request_button').fadeIn(400);
 					$('#orcid_request_button').prop('disabled', false);

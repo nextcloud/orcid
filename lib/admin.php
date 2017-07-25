@@ -28,8 +28,12 @@
 
 namespace OCA\Orcid;
 
-$app = new \OCA\Orcid\AppInfo\Application();
+use OCA\Orcid\AppInfo\Application;
+use OCP\AppFramework\Http\TemplateResponse;
 
+$app = new Application();
+
+/** @var TemplateResponse $response */
 $response = $app->getContainer()
 				->query('SettingsController')
 				->admin();

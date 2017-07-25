@@ -29,36 +29,47 @@
 namespace OCA\Orcid\Controller;
 
 use \OCA\Orcid\Service\ConfigService;
+use OCA\Orcid\Service\MiscService;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IRequest;
 
 class SettingsController extends Controller {
 
-
+	/** @var ConfigService */
 	private $configService;
 
+	/** @var MiscService */
 	private $miscService;
 
+	/**
+	 * SettingsController constructor.
+	 *
+	 * @param string $appName
+	 * @param IRequest $request
+	 * @param ConfigService $configService
+	 * @param MiscService $miscService
+	 */
 	public function __construct(
-		$appName, IRequest $request, ConfigService $configService, $miscService
+		$appName, IRequest $request, ConfigService $configService, MiscService $miscService
 	) {
 		parent::__construct($appName, $request);
 		$this->configService = $configService;
 		$this->miscService = $miscService;
 	}
 
-	//
-	// Admin
-	//
-
 	/**
 	 * @NoCSRFRequired
+	 *
+	 * @return TemplateResponse
 	 */
 	public function admin() {
 		return new TemplateResponse($this->appName, 'settings.admin', [], 'blank');
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getOrcidConfig() {
 		$params = [
 			'orcidAppID'  => $this->configService->getAppValue(ConfigService::ORCID_CLIENT_APPID),
@@ -69,6 +80,12 @@ class SettingsController extends Controller {
 		return $params;
 	}
 
+	/**
+	 * @param string $client_app_id
+	 * @param string $client_secret
+	 *
+	 * @return array
+	 */
 	public function setOrcidConfig($client_app_id, $client_secret) {
 		$this->configService->setAppValue(ConfigService::ORCID_CLIENT_APPID, trim($client_app_id));
 		$this->configService->setAppValue(ConfigService::ORCID_CLIENT_SECRET, trim($client_secret));
@@ -76,13 +93,11 @@ class SettingsController extends Controller {
 		return $this->getOrcidConfig();
 	}
 
-	//
-	// Personal
-	//
-
 	/**
 	 * @NoCSRFRequired
 	 * @NoAdminRequired
+	 *
+	 * @return TemplateResponse
 	 */
 	public function personal() {
 		return new TemplateResponse($this->appName, 'settings.personal', [], 'blank');
@@ -103,12 +118,15 @@ class SettingsController extends Controller {
 
 	/**
 	 * @NoAdminRequired
+	 *
+	 * @return array
 	 */
 	public function getUserOrcid() {
+
+		$orcidUp = (($this->configService->getAppValue(ConfigService::ORCID_CLIENT_APPID)
+					 !== '') ? '1' : '');
 		$params = [
-			'orcid_up'               => (($this->configService->getAppValue(
-					ConfigService::ORCID_CLIENT_APPID
-				) !== '') ? '1' : ''),
+			'orcid_up'               => $orcidUp,
 			'request_user_orcid_url' => $this->generateOrcidRequestUrl(),
 			'user_orcid'             => $this->configService->getUserValue(
 				ConfigService::ORCID_USER_ORCID
@@ -118,6 +136,9 @@ class SettingsController extends Controller {
 		return $params;
 	}
 
+	/**
+	 * @return string
+	 */
 	private function generateOrcidRequestUrl() {
 		$params = $this->getOrcidConfig();
 
@@ -127,6 +148,12 @@ class SettingsController extends Controller {
 		);
 	}
 
+	/**
+	 * @param string $code
+	 * @param string $content
+	 *
+	 * @return string
+	 */
 	private function generateOrcidOauthUrl($code, &$content = '') {
 		$params = $this->getOrcidConfig();
 		$redirectURL = self::generateOrcidUrl();
@@ -139,7 +166,9 @@ class SettingsController extends Controller {
 		return 'https://orcid.org/oauth/token';
 	}
 
-
+	/**
+	 * @return string
+	 */
 	public static function generateOrcidUrl() {
 		$redirectURL = \OC::$server->getURlGenerator()
 								   ->linkToRouteAbsolute('orcid.settings.OrcidCode');
@@ -151,6 +180,8 @@ class SettingsController extends Controller {
 	/**
 	 * @NoCSRFRequired
 	 * @NoAdminRequired
+	 *
+	 * @return string
 	 */
 	public function OrcidCode() {
 

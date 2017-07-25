@@ -32,6 +32,8 @@ use \OCA\Orcid\Controller\SettingsController;
 use \OCA\Orcid\Service\ConfigService;
 use \OCA\Orcid\Service\MiscService;
 use OCP\AppFramework\App;
+use OCP\IContainer;
+use OCP\IUser;
 
 class Application extends App {
 
@@ -47,13 +49,13 @@ class Application extends App {
 		 * Controllers
 		 */
 		$container->registerService(
-			'MiscService', function ($c) {
+			'MiscService', function(IContainer $c) {
 			return new MiscService($c->query('Logger'), $c->query('AppName'));
 		}
 		);
 
 		$container->registerService(
-			'ConfigService', function ($c) {
+			'ConfigService', function(IContainer $c) {
 			return new ConfigService(
 				$c->query('AppName'), $c->query('CoreConfig'), $c->query('UserId'),
 				$c->query('MiscService')
@@ -62,7 +64,7 @@ class Application extends App {
 		);
 
 		$container->registerService(
-			'SettingsController', function ($c) {
+			'SettingsController', function(IContainer $c) {
 			return new SettingsController(
 				$c->query('AppName'), $c->query('Request'), $c->query('ConfigService'),
 				$c->query('MiscService')
@@ -74,20 +76,21 @@ class Application extends App {
 		 * Core
 		 */
 		$container->registerService(
-			'Logger', function ($c) {
+			'Logger', function(IContainer $c) {
 			return $c->query('ServerContainer')
 					 ->getLogger();
 		}
 		);
 		$container->registerService(
-			'CoreConfig', function ($c) {
+			'CoreConfig', function(IContainer $c) {
 			return $c->query('ServerContainer')
 					 ->getConfig();
 		}
 		);
 
 		$container->registerService(
-			'UserId', function ($c) {
+			'UserId', function(IContainer $c) {
+			/** @var IUser $user */
 			$user = $c->query('ServerContainer')
 					  ->getUserSession()
 					  ->getUser();

@@ -29,19 +29,29 @@
 namespace OCA\Orcid\Service;
 
 
+use OCA\Orcid\AppInfo\Application;
+
 class ApiService {
 
+	/**
+	 * @return \OCP\AppFramework\IAppContainer
+	 */
 	static protected function getContainer() {
-		$app = new \OCA\Orcid\AppInfo\Application();
+		$app = new Application();
 
 		return $app->getContainer();
 	}
 
-	public static function getUserOrcid($username) {
+	/**
+	 * @param string $userId
+	 *
+	 * @return mixed
+	 */
+	public static function getUserOrcid($userId) {
 		$c = self::getContainer();
 
 		return $c->query('ConfigService')
-				 ->getValueForUser($username, ConfigService::ORCID_USER_ORCID);
+				 ->getValueForUser($userId, ConfigService::ORCID_USER_ORCID);
 	}
 
 

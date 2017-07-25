@@ -58,7 +58,7 @@ $(document).ready(
 			},
 
 			display: function (response) {
-				if (response == null)
+				if (response === null)
 					return;
 				orcidAdmin.saving(false);
 

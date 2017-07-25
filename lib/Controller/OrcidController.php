@@ -29,24 +29,39 @@
 namespace OCA\Orcid\Controller;
 
 use \OCA\Orcid\Service\ConfigService;
+use OCA\Orcid\Service\MiscService;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IRequest;
 
 class OrcidController extends Controller {
 
+	/** @var ConfigService */
 	private $configService;
 
+	/** @var MiscService */
 	private $miscService;
 
+	/**
+	 * OrcidController constructor.
+	 *
+	 * @param string $appName
+	 * @param IRequest $request
+	 * @param ConfigService $configService
+	 * @param MiscService $miscService
+	 */
 	public function __construct(
-		$appName, IRequest $request, ConfigService $configService, $miscService
+		$appName, IRequest $request, ConfigService $configService, MiscService $miscService
 	) {
 		parent::__construct($appName, $request);
 		$this->configService = $configService;
 		$this->miscService = $miscService;
 	}
 
+
+	/**
+	 * @return string
+	 */
 	public static function generateOrcidUrl() {
 		$redirectURL = \OC::$server->getURlGenerator()
 								   ->linkToRouteAbsolute('orcid.orcid.OrcidCode');
@@ -57,6 +72,8 @@ class OrcidController extends Controller {
 	/**
 	 * @NoCSRFRequired
 	 * @NoAdminRequired
+	 *
+	 * @return TemplateResponse
 	 */
 	public function AboutOrcid() {
 		return new TemplateResponse($this->appName, 'about', [], 'blank');
@@ -65,6 +82,8 @@ class OrcidController extends Controller {
 	/**
 	 * @NoCSRFRequired
 	 * @NoAdminRequired
+	 *
+	 * @return bool|TemplateResponse
 	 */
 	public function OrcidCode() {
 
@@ -113,11 +132,9 @@ class OrcidController extends Controller {
 			$this->configService->setUserValue('access_token', $response['access_token']);
 
 			return new TemplateResponse($this->appName, 'thanks', [], 'blank');
-		} else {
-			return false;
 		}
 
-		return true;
+		return false;
 	}
 }
 

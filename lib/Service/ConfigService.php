@@ -28,8 +28,8 @@
 
 namespace OCA\Orcid\Service;
 
-use \OCA\Orcid\Controller\SettingsController;
 use OCP\IConfig;
+use OCP\Util;
 
 class ConfigService {
 
@@ -40,19 +40,32 @@ class ConfigService {
 	const ORCID_USER_TOKEN = 'user_token';
 
 	private $defaults = [
-		'configured' => '0',
-		self::ORCID_CLIENT_APPID => '',
+		'configured'              => '0',
+		self::ORCID_CLIENT_APPID  => '',
 		self::ORCID_CLIENT_SECRET => ''
-
 	];
 
+	/** @var string */
 	private $appName;
 
+	/** @var IConfig */
 	private $config;
 
+	/** @var string */
+	private $userId;
+
+	/** @var MiscService */
 	private $miscService;
 
-	public function __construct($appName, IConfig $config, $userId, $miscService) {
+	/**
+	 * ConfigService constructor.
+	 *
+	 * @param string $appName
+	 * @param IConfig $config
+	 * @param string $userId
+	 * @param MiscService $miscService
+	 */
+	public function __construct($appName, IConfig $config, $userId, MiscService $miscService) {
 		$this->appName = $appName;
 		$this->config = $config;
 		$this->userId = $userId;
@@ -80,11 +93,9 @@ class ConfigService {
 	 *
 	 * @param string $key
 	 * @param string $value
-	 *
-	 * @return string
 	 */
 	public function setAppValue($key, $value) {
-		return $this->config->setAppValue($this->appName, $key, $value);
+		$this->config->setAppValue($this->appName, $key, $value);
 	}
 
 	/**
@@ -101,7 +112,6 @@ class ConfigService {
 	/**
 	 * Get a user value by key
 	 *
-	 * @param string $userId
 	 * @param string $key
 	 *
 	 * @return string
@@ -113,7 +123,6 @@ class ConfigService {
 	/**
 	 * Set a user value by key
 	 *
-	 * @param string $userId
 	 * @param string $key
 	 * @param string $value
 	 *
@@ -146,7 +155,7 @@ class ConfigService {
 	 * @return string|integer
 	 */
 	public function getCloudVersion($complete = false) {
-		$ver = \OCP\Util::getVersion();
+		$ver = Util::getVersion();
 
 		if ($complete) {
 			return implode('.', $ver);

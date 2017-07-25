@@ -32,15 +32,27 @@ use OCP\ILogger;
 
 class MiscService {
 
+	/** @var ILogger */
 	private $logger;
 
+	/** @var string */
 	private $appName;
 
+	/**
+	 * MiscService constructor.
+	 *
+	 * @param ILogger $logger
+	 * @param string $appName
+	 */
 	public function __construct(ILogger $logger, $appName) {
 		$this->logger = $logger;
 		$this->appName = $appName;
 	}
 
+	/**
+	 * @param string $message
+	 * @param int $level
+	 */
 	public function log($message, $level = 2) {
 		$data = array(
 			'app'   => $this->appName,
