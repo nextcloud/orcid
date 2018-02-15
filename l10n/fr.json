@@ -1,4 +1,5 @@
 { "translations": {
-    "Saving" : "Sauvegarde"
+    "ORCID" : "ORCID",
+    "Saving" : "Enregistrement"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }
