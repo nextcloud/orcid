@@ -2,6 +2,6 @@ OC.L10N.register(
     "orcid",
     {
     "ORCID" : "ORCID",
-    "Saving" : "Γίνεται αποθήκευση"
+    "Saving" : "Stoor tans"
 },
 "nplurals=2; plural=(n != 1);");
