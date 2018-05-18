@@ -4,4 +4,4 @@ OC.L10N.register(
     "ORCID" : "ORCID",
     "Saving" : "მიმდინარეობს შენახვა"
 },
-"nplurals=2; plural=(n==1);");
+"nplurals=2; plural=(n!=1);");
