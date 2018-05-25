@@ -1,6 +1,5 @@
 { "translations": {
     "ORCID" : "ORCID",
-    "Authenticate with ORCID" : "Mit ORCID authentifizieren",
-    "Saving" : "Speichern"
+    "Saving" : "Guardando"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
