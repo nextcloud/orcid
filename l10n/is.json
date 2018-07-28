@@ -1,5 +1,7 @@
 { "translations": {
     "ORCID" : "ORCID",
-    "Saving" : "Vistun"
+    "Authenticate with ORCID" : "Auðkenna með ORCID",
+    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "byggt á user_orcid sem skrifað var af Lars Næsbye Christensen, DeIC",
+    "Saving" : "Vista"
 },"pluralForm" :"nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);"
 }
