@@ -1,0 +1,7 @@
+{ "translations": {
+    "ORCID" : "ORCID",
+    "Authenticate with ORCID" : "Authenticeren met ORCID",
+    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "gebaseerd op user_orcid geschreven door Lars Næsbye Christensen, DeIC",
+    "Saving" : "Opslaan"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}
