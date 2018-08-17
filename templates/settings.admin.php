@@ -4,43 +4,28 @@ style('orcid', 'admin');
 
 ?>
 
-<fieldset id="orcidAdminSettings" class="section">
-	<h2>
-		<img src="/apps/orcid/img/orcid.png"> ORCID
-	</h2>
-	<table style="width: 650px;">
-		<tr class="orcid_admin_head">
-			<td>
-				<div id="orcid_saving"><?php p($l->t('Saving')); ?></div>
-			</td>
-			<td class="orcid_admin_head">ORCID API Credentials</td>
-		</tr>
 
-		<tr>
-			<td class="orcid_admin_left orcid_moremargin">Redirect URL:</td>
-			<td id="redirecturl"></td>
-		</tr>
-		<tr>
-			<td class="orcid_admin_left">Client ID:</td>
-			<td><input type='text' style="width: 300px" name='orcid_client_appid'
-					   id='orcid_client_appid' original-title=''
-					   title='Set the Client app ID for OAuth'></td>
-		</tr>
-		<tr>
-			<td class="orcid_admin_left">Client Secret:</td>
-			<td><input type='text' name='orcid_client_secret' style="width: 300px"
-					   id='orcid_client_secret' original-title=''
-					   title='Set the Client secret for OAuth'></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td><input type='submit' value='Store ORCID Credentials'
-					   style="width: 250px" original-title='' style="width: 300px"
-					   id='clientsubmit' name='clientsubmit'
-					   title='Store ORCID Credentials'></input></td>
-		</tr>
-	</table>
-	<div id='clientstatus' style="font-size: .8em;"></div>
 
-</fieldset>
+<div class="section" id="orcid">
+	<h2><?php p($l->t('ORCID API Credentials')) ?></h2>
+
+	<p>
+		<label><?php p($l->t('Redirect URL:')); ?></label><br />
+		<label id="redirecturl"></label>
+	</p>
+
+	<p>
+		<label><?php p($l->t('Client ID')); ?></label><br />
+		<input type="text" id="orcid_client_appid" />
+	</p>
+
+	<p>
+		<label><?php p($l->t('Client Secret')); ?></label><br />
+		<input type="text" id="orcid_client_secret" />
+	</p>
+
+	<p>
+		<input type="submit" id="clientsubmit" value="<?php p($l->t('Store ORCID Credentials')); ?>">
+	</p>
+</div>
 
