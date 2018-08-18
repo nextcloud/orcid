@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "ORCID" : "ORCID",
     "Authenticate with ORCID" : "Authentification avec ORCID",
-    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "basé sur user_orcid, écrit par Lars Næsbye Christensen, DeIC",
-    "Saving" : "Enregistrement"
+    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "basé sur user_orcid, écrit par Lars Næsbye Christensen, DeIC"
 },
 "nplurals=2; plural=(n > 1);");
