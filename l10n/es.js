@@ -3,6 +3,13 @@ OC.L10N.register(
     {
     "ORCID" : "ORCID",
     "Authenticate with ORCID" : "Autenticación con ORCID",
-    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "Basada en user_orcid escrita por Lars Næsbye Christensen, DeIC"
+    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "Basada en user_orcid escrita por Lars Næsbye Christensen, DeIC",
+    "ORCID API Credentials" : "Credenciales de la API de ORCID",
+    "Redirect URL:" : "URL de redirección:",
+    "Client ID" : "ID de cliente",
+    "Client Secret" : "Secreto de cliente",
+    "Store ORCID Credentials" : "Almacenar credenciales ORCID",
+    "Your ORCID:" : "Tu ORCID:",
+    "Connect to ORCID" : "Conectar a ORCID"
 },
 "nplurals=2; plural=(n != 1);");
