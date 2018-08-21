@@ -1,6 +1,13 @@
 { "translations": {
     "ORCID" : "ORCID",
     "Authenticate with ORCID" : "Идентификујте се преко ORCID-а",
-    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "базирано на user_orcid модулу који је написао Lars Næsbye Christensen, DeIC"
+    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "базирано на user_orcid модулу који је написао Lars Næsbye Christensen, DeIC",
+    "ORCID API Credentials" : "ORCID API акредитиви",
+    "Redirect URL:" : "Адреса за преусмерење:",
+    "Client ID" : "ID клијента",
+    "Client Secret" : "Клијентска лозинка",
+    "Store ORCID Credentials" : "Сачувај ORCID акредитиве",
+    "Your ORCID:" : "Ваш ORCID:",
+    "Connect to ORCID" : "Повежи се са ORCID-ом"
 },"pluralForm" :"nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);"
 }
