@@ -3,6 +3,13 @@ OC.L10N.register(
     {
     "ORCID" : "ORCID",
     "Authenticate with ORCID" : "Auðkenna með ORCID",
-    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "byggt á user_orcid sem skrifað var af Lars Næsbye Christensen, DeIC"
+    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "byggt á user_orcid sem skrifað var af Lars Næsbye Christensen, DeIC",
+    "ORCID API Credentials" : "ORCID API auðkenni",
+    "Redirect URL:" : "Endurbeiningarslóð:",
+    "Client ID" : "Biðlaraauðkenni",
+    "Client Secret" : "Leynilykill biðlara",
+    "Store ORCID Credentials" : "Geyma ORCID-auðkenni",
+    "Your ORCID:" : "Þitt ORCID:",
+    "Connect to ORCID" : "Tengjast við ORCID"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");
