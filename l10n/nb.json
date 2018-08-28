@@ -1,0 +1,6 @@
+{ "translations": {
+    "ORCID" : "ORKIDÉ",
+    "Client ID" : "Klient-ID",
+    "Client Secret" : "Klient-hemmelighet"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}
