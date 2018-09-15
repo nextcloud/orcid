@@ -1,0 +1,7 @@
+{ "translations": {
+    "ORCID" : "ORCID",
+    "Authenticate with ORCID" : "ORCIDで認証する",
+    "Redirect URL:" : "リダイレクトURL:",
+    "Client ID" : "クライアントID"
+},"pluralForm" :"nplurals=1; plural=0;"
+}
