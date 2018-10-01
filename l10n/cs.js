@@ -1,6 +1,7 @@
 OC.L10N.register(
     "orcid",
     {
+    "ORCID" : "ORCID identifikátor",
     "Authenticate with ORCID" : "Ověřit totožnost pomocí ORCID",
     "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "založeno na user_orcid, které vytvořil Lars Næsbye Christensen, DeIC",
     "ORCID API Credentials" : "ORCID API pověření",
