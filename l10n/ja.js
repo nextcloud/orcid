@@ -7,7 +7,7 @@ OC.L10N.register(
     "ORCID API Credentials" : "ORCID API資格情報",
     "Redirect URL:" : "リダイレクトURL:",
     "Client ID" : "クライアントID",
-    "Client Secret" : "クライアント秘密キー",
+    "Client Secret" : "クライアントシークレットキー",
     "Store ORCID Credentials" : "ORCID資格情報の保存",
     "Your ORCID:" : "あなたのORCID：",
     "Connect to ORCID" : "ORCIDに接続する"
