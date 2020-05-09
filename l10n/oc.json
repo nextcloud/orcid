@@ -1,0 +1,6 @@
+{ "translations": {
+    "ORCID" : "ORCID",
+    "Client ID" : "ID client",
+    "Client Secret" : "Secret del client"
+},"pluralForm" :"nplurals=2; plural=(n > 1);"
+}
