@@ -5,7 +5,7 @@ OC.L10N.register(
     "Authenticate with ORCID" : "Uwierzytelnij przy pomocy aplikacji ORCID",
     "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "na bazie user_orcid autorstwa Lars Næsbye Christensen, DeIC",
     "ORCID API Credentials" : "Poświadczenia ORCID API",
-    "Redirect URL:" : "URL przekierowania: ",
+    "Redirect URL:" : "Adres URL przekierowania:",
     "Client ID" : "ID klienta",
     "Client Secret" : "Hasło klienta",
     "Store ORCID Credentials" : "Zapisz poświadczenia ORCID",
