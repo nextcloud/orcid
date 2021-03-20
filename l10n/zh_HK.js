@@ -8,7 +8,7 @@ OC.L10N.register(
     "Redirect URL:" : "重導向 URL:",
     "Client ID" : "客戶端ID",
     "Client Secret" : "客戶端密碼",
-    "Store ORCID Credentials" : "存儲 ORCID 身份驗證",
+    "Store ORCID Credentials" : "存儲 ORCID 身分驗證",
     "Your ORCID:" : "您的 ORCID:",
     "Connect to ORCID" : "連線至 ORCID"
 },
