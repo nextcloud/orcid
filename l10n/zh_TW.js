@@ -1,6 +1,15 @@
 OC.L10N.register(
     "orcid",
     {
-    "Client ID" : "客戶端ID"
+    "ORCID" : "ORCID",
+    "Authenticate with ORCID" : "以 ORCID 驗證",
+    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "基於 DeIC 的 Lars Næsbye Christensen 寫的 user_orcid",
+    "ORCID API Credentials" : "ORCID API 憑證",
+    "Redirect URL:" : "重新導向網址：",
+    "Client ID" : "客戶端ID",
+    "Client Secret" : "客戶端密碼",
+    "Store ORCID Credentials" : "儲存 ORCID 憑證",
+    "Your ORCID:" : "您的 ORCID：",
+    "Connect to ORCID" : "連線至 ORCID"
 },
 "nplurals=1; plural=0;");
