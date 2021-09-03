@@ -7,7 +7,7 @@ OC.L10N.register(
     "ORCID API Credentials" : "ORCID-API-Zugangsdaten",
     "Redirect URL:" : "Weiterleitungs-URL:",
     "Client ID" : "Client-ID",
-    "Client Secret" : "Client-Geheimnis",
+    "Client Secret" : "Geheime Zeichenkette des Clients",
     "Store ORCID Credentials" : "Zugangsdaten für ORCID speichern",
     "Your ORCID:" : "Ihr ORCID:",
     "Connect to ORCID" : "Mit ORCID verbinden"
