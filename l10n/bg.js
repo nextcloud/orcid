@@ -1,7 +1,15 @@
 OC.L10N.register(
     "orcid",
     {
+    "ORCID" : "ORCID",
     "Authenticate with ORCID" : "Удостоверяване с ORCID",
-    "Client ID" : "Client ID"
+    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "базиран на потребител_orcid, написан от Ларс Несби Кристенсен, DeIC",
+    "ORCID API Credentials" : " API Идентификационни данни за ORCID",
+    "Redirect URL:" : "URL за пренасочване:",
+    "Client ID" : "Client ID",
+    "Client Secret" : "Тайна на клиент",
+    "Store ORCID Credentials" : "Съхранение на идентификационни данни на ORCID",
+    "Your ORCID:" : "Вашият ORCID:",
+    "Connect to ORCID" : "Свързване с ORCID"
 },
 "nplurals=2; plural=(n != 1);");
