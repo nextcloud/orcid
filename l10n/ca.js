@@ -4,7 +4,7 @@ OC.L10N.register(
     "ORCID" : "ORCID",
     "Authenticate with ORCID" : "Autenticació amb ORCID",
     "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "Basat en user_orcid, escrit per Lars Næsbye Christensen, DeIC",
-    "ORCID API Credentials" : "Credencials de l’API d’ORCID",
+    "ORCID API Credentials" : "Credencials de l'API d'ORCID",
     "Redirect URL:" : "URL de redirecció:",
     "Client ID" : "ID del client",
     "Client Secret" : "Secret del client",
