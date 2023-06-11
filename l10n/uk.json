@@ -1,6 +1,6 @@
 { "translations": {
     "ORCID" : "ORCID",
-    "Authenticate with ORCID" : "Автентифікація за допомогою ORCID",
+    "Authenticate with ORCID" : "Авторизація за допомогою ORCID",
     "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "заснований на user_orcid, написаний Ларсом Несбі Крістенсеном, DeIC",
     "ORCID API Credentials" : "Облікові дані ORCID API",
     "Redirect URL:" : "URL-адреса перенаправлення:",
