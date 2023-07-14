@@ -2,8 +2,13 @@ OC.L10N.register(
     "orcid",
     {
     "ORCID" : "ORCID",
-    "Client ID" : "Kliënt-ID",
-    "Client Secret" : "Kliënt-geheim",
+    "Authenticate with ORCID" : "Verklaar geldig met ORCID",
+    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "gebaseer op user_orcid beskryf deur Lars Næsbye Christensen, DeIC",
+    "ORCID API Credentials" : "ORCID-API-aantekenbesonderhede",
+    "Redirect URL:" : "Herlei-URL:",
+    "Client ID" : "Klant-ID",
+    "Client Secret" : "Klant-geheim",
+    "Store ORCID Credentials" : "Bewaar ORCID-aantekenbesonderhede",
     "Your ORCID:" : "U ORCID:",
     "Connect to ORCID" : "Koppel aan ORCID"
 },
