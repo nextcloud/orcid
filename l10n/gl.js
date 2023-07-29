@@ -10,6 +10,6 @@ OC.L10N.register(
     "Client Secret" : "Segredo do cliente",
     "Store ORCID Credentials" : "Almacenar as credenciais do ORCID",
     "Your ORCID:" : "O seu ORCID:",
-    "Connect to ORCID" : "Conectar co ORCID"
+    "Connect to ORCID" : "Conectar con ORCID"
 },
 "nplurals=2; plural=(n != 1);");
