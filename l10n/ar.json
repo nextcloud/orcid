@@ -4,7 +4,7 @@
     "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "بناءً على user_orcid الذي كتبه Næsbye Christensen من DeIC",
     "ORCID API Credentials" : "حيثيات دخول واجهة برمجة تطبيقات ORCID",
     "Redirect URL:" : "إعادة توجيه عنوان URL:",
-    "Client ID" : "مُعرّف العميل",
+    "Client ID" : "معرف العميل",
     "Client Secret" : "سر العميل",
     "Store ORCID Credentials" : "حفظ حيثيات دخول ORCID",
     "Your ORCID:" : "مُعرّف ORCID الخاص بك:",
