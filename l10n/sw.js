@@ -1,6 +1,15 @@
 OC.L10N.register(
     "orcid",
     {
-    "Client ID" : "Kitambulisho cha mteja"
+    "ORCID" : "ORCID",
+    "Authenticate with ORCID" : "Thibitisha kwa ORCID",
+    "based on user_orcid written by Lars Næsbye Christensen, DeIC" : "kulingana na user_orcid iliyoandikwa na Lars Næsbye Christensen, DeIC",
+    "ORCID API Credentials" : "Hati za API ya ORCID",
+    "Redirect URL:" : "Elekeza upya URL:",
+    "Client ID" : "Kitambulisho cha mteja",
+    "Client Secret" : "Siri ya Mteja",
+    "Store ORCID Credentials" : "Hifadhi Kitambulisho cha ORCID",
+    "Your ORCID:" : "ORCID yako:",
+    "Connect to ORCID" : "Unganisha kwa ORCID"
 },
 "nplurals=2; plural=(n != 1);");
