@@ -1,4 +1,5 @@
 { "translations": {
-    "Client ID" : "Kliendi ID"
+    "Client ID" : "Kliendi ID",
+    "Client Secret" : "Kliendi saladus"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
